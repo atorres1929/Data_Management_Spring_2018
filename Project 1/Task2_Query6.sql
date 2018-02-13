@@ -1,0 +1,3 @@
+ALTER TABLE Enroll 
+ALTER COLUMN grade
+SET NOT NULL;

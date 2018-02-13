@@ -1,0 +1,1 @@
+COPY ENROLL FROM 'Enroll.csv' WITH (FORMAT CSV);
