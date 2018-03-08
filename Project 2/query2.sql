@@ -1,3 +1,3 @@
-SELECT description
+SELECT Description
 FROM Courses
-WHERE semester = 'Spring 2018';
+WHERE Semester = 'Spring 2018';

@@ -1,4 +1,4 @@
-ALTER TABLE Courses ADD COLUMN semester text;
+ALTER TABLE Courses ADD COLUMN Semester text;
 
 UPDATE Courses
 SET Semester = 'Spring 2018'
