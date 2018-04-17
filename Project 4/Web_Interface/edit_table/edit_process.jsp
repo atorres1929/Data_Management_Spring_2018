@@ -4,7 +4,6 @@
   </head>
   <body>
     <jsp:include page="/Web_Interface/header.jsp" />
-    <h1>Update</h1>
     <%
     String command = request.getParameter("command");
     String table = request.getParameter("table");
@@ -15,6 +14,7 @@
     else if (command.equals("update")) {
       if (table.equals("courses")) {
     %>
+    <h1>Update</h1>
     <form method="post" action="update.jsp">
       <input type="radio" name="columnCourses" value="courseID">Course ID</input>
       <input type="radio" name="columnCourses" value="description">Description</input>
@@ -34,6 +34,7 @@
     else if (command.equals("insert")) {
       if (table.equals("courses")) {
     %>
+    <h1>Insert</h1>
       <form method="post" action="insert.jsp">
         <p>Course ID:</p><br/>
         <input type="text" name="column1"/>
@@ -48,6 +49,16 @@
       </form>
     <%
       }
+    }
+    else if (command.equals("delete")) {
+    %>
+    <h1>Delete</h1>
+      <form action="delete.jsp" method="post">
+        ID: <input type="text" name="id" />
+        <input type="hidden" name="table" value="<%= request.getParameter("table") %>" />
+        <input type="submit" value="Delete" />
+      </form>
+    <%
     }
     %>
   </body>
