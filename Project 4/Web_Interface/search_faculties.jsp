@@ -1,16 +1,16 @@
 <%@ page import="java.sql.*" %>
 <html>
   <head>
-    <title>Students</title>
+    <title>Faculties</title>
   </head>
   <body>
-    <jsp:include page="../header.jsp"/>
+    <jsp:include page="header.jsp"/>
     <table border="1">
       <tr>
-        <th><strong>Students</strong></th>
+        <th><strong>Faculties</strong></th>
       </tr>
       <tr>
-        <th>Student ID</th>
+        <th>Faculties ID</th>
         <th>Name</th>
         <th>Date of Birth</th>
         <th>Address</th>
@@ -28,7 +28,7 @@
       Class.forName("org.postgresql.Driver").newInstance();
       connection = DriverManager.getConnection(connectionURL);
       statement = connection.createStatement();
-      resultSet = statement.executeQuery("Select * FROM students");
+      resultSet = statement.executeQuery("Select * FROM faculties WHERE name LIKE '%" + request.getParameter("name") + "%'");
 
       while (resultSet.next()) {
        %>

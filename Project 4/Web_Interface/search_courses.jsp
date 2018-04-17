@@ -1,21 +1,20 @@
 <%@ page import="java.sql.*" %>
 <html>
   <head>
-    <title>Students</title>
+    <title>Courses</title>
   </head>
   <body>
-    <jsp:include page="../header.jsp"/>
+    <jsp:include page="header.jsp"/>
     <table border="1">
       <tr>
-        <th><strong>Students</strong></th>
+        <th><strong>Courses</strong></th>
       </tr>
       <tr>
-        <th>Student ID</th>
-        <th>Name</th>
-        <th>Date of Birth</th>
-        <th>Address</th>
-        <th>Email</th>
+        <th>Course ID</th>
+        <th>Description</th>
         <th>Level</th>
+        <th>Instructor</th>
+        <th>Semester</th>
       </tr>
       <%
       String connectionURL =
@@ -28,7 +27,7 @@
       Class.forName("org.postgresql.Driver").newInstance();
       connection = DriverManager.getConnection(connectionURL);
       statement = connection.createStatement();
-      resultSet = statement.executeQuery("Select * FROM students");
+      resultSet = statement.executeQuery("Select * FROM courses WHERE description LIKE '%" + request.getParameter("description") + "%'");
 
       while (resultSet.next()) {
        %>
@@ -38,7 +37,6 @@
         <td><%= resultSet.getString(3) %></td>
         <td><%= resultSet.getString(4) %></td>
         <td><%= resultSet.getString(5) %></td>
-        <td><%= resultSet.getString(6) %></td>
       </tr>
       <%
       }

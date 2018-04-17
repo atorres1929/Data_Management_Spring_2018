@@ -1,7 +1,7 @@
 <%@ page import="java.sql.*" %>
 <html>
   <head>
-    <title>Courses</title>
+    <title>Faculties</title>
   </head>
   <body>
     <jsp:include page="../header.jsp"/>
@@ -40,7 +40,10 @@
         <td><%= resultSet.getString(5) %></td>
         <td><%= resultSet.getString(6) %></td>
       </tr>
-      <% } %>
+      <%
+      }
+      resultSet.close();
+      %>
     </table>
   </body>
 </html>

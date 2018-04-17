@@ -3,7 +3,7 @@
   <head>
     <title>Home</title>
   </head>
-
-  <jsp:include page="header.jsp"/>
-
+  <body>
+    <jsp:include page="header.jsp"/>
+  </body>
 </html>

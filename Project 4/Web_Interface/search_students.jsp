@@ -4,7 +4,7 @@
     <title>Students</title>
   </head>
   <body>
-    <jsp:include page="../header.jsp"/>
+    <jsp:include page="header.jsp"/>
     <table border="1">
       <tr>
         <th><strong>Students</strong></th>
@@ -28,7 +28,7 @@
       Class.forName("org.postgresql.Driver").newInstance();
       connection = DriverManager.getConnection(connectionURL);
       statement = connection.createStatement();
-      resultSet = statement.executeQuery("Select * FROM students");
+      resultSet = statement.executeQuery("Select * FROM students WHERE name LIKE '%" + request.getParameter("name") + "%'");
 
       while (resultSet.next()) {
        %>

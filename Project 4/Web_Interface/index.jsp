@@ -16,7 +16,7 @@
       }
       session.invalidate();
     %>
-    <form method="post" action="loginprocess.jsp">
+    <form method="post" action="login_process.jsp">
       <p><strong>Username: </strong></p>
       <input type="text" name="username" size="25"/>
       <p><strong>Password: </strong></p>

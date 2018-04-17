@@ -38,7 +38,10 @@
         <td><%= resultSet.getString(4) %></td>
         <td><%= resultSet.getString(5) %></td>
       </tr>
-      <% } %>
+      <%
+      }
+      resultSet.close();
+      %>
     </table>
   </body>
 </html>
